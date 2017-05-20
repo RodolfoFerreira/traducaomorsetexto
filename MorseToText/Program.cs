@@ -6,7 +6,7 @@ namespace MorseToText
     {
         public static void Main(string[] args)
         {
-            string text = new TraducaoMorseText("EXEMPLO DE TEXTO A SER CONVERTIDO").traduzMorse();
+            string text = new TraducaoMorseText(". -..- . -- .--. .-.. --- / -.-. --- -- / .- -.-. . -. - --- ---... / .... .- / ..- -- .- / .-.. ..- .- / -... . -- / -... --- -. .. - .- / -. --- / -.-. . ..- / .- -. .- --- --..-- / -.-. --- -.-. .-").traduzMorse();
             Console.Write(text);
             Console.ReadKey();
         }

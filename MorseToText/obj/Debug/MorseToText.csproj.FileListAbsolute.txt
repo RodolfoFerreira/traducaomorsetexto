@@ -1,0 +1,6 @@
+C:\Users\Rodolfo\Documents\Visual Studio 2015\Projects\MorseToText\traducaomorsetexto\MorseToText\bin\Debug\MorseToText.exe.config
+C:\Users\Rodolfo\Documents\Visual Studio 2015\Projects\MorseToText\traducaomorsetexto\MorseToText\bin\Debug\MorseToText.exe
+C:\Users\Rodolfo\Documents\Visual Studio 2015\Projects\MorseToText\traducaomorsetexto\MorseToText\bin\Debug\MorseToText.pdb
+C:\Users\Rodolfo\Documents\Visual Studio 2015\Projects\MorseToText\traducaomorsetexto\MorseToText\obj\Debug\MorseToText.csprojResolveAssemblyReference.cache
+C:\Users\Rodolfo\Documents\Visual Studio 2015\Projects\MorseToText\traducaomorsetexto\MorseToText\obj\Debug\MorseToText.exe
+C:\Users\Rodolfo\Documents\Visual Studio 2015\Projects\MorseToText\traducaomorsetexto\MorseToText\obj\Debug\MorseToText.pdb

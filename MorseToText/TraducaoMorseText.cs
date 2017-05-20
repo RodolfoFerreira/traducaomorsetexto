@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.Globalization;
+using System.Text;
 
 namespace MorseToText
 {
@@ -11,6 +13,7 @@ namespace MorseToText
         public TraducaoMorseText(string msg)
         {
             Msg = msg;
+            removeCaractereEspecial(Msg);           
             montaListaAlfabeto();
         }
 
@@ -24,6 +27,7 @@ namespace MorseToText
 
             if (verificaTextoMorse())
             {
+                verificaEspacoFim();
                 foreach (var item in Msg)
                 {
                     if (item.ToString() != " ")
@@ -110,6 +114,7 @@ namespace MorseToText
             listaCaracteres.Add(",", "--..-- ");
             listaCaracteres.Add(":", "---... ");
             listaCaracteres.Add("?", "..--.. ");
+            listaCaracteres.Add("!", "-.-.-- ");
             listaCaracteres.Add("=", "-...- ");
             listaCaracteres.Add(@"\-", "-....- ");
             listaCaracteres.Add("(", "-.--. ");
@@ -161,6 +166,7 @@ namespace MorseToText
             listaCaracteres.Add("--..--", ",");
             listaCaracteres.Add("---...", ":");
             listaCaracteres.Add("..--..", "?");
+            listaCaracteres.Add("-.-.--", "!");
             listaCaracteres.Add("-...-", "=");
             listaCaracteres.Add("-....-", "-");
             listaCaracteres.Add("-.--.", "(");
@@ -170,6 +176,30 @@ namespace MorseToText
             listaCaracteres.Add("-..-.", "/");
             listaCaracteres.Add(".--.-.", "@");
             listaCaracteres.Add("/", " ");
+        }
+
+        private void removeCaractereEspecial(string msg)
+        {
+            var msgNormalizada = msg.Normalize(NormalizationForm.FormD);
+            var sb = new StringBuilder();
+
+            foreach (var c in msgNormalizada)
+            {
+                var unicodeCategory = CharUnicodeInfo.GetUnicodeCategory(c);
+                if (unicodeCategory != UnicodeCategory.NonSpacingMark)
+                {
+                    sb.Append(c);
+                }
+            }
+            this.Msg = sb.ToString();
+        }
+
+        public void verificaEspacoFim()
+        {
+                if(!(this.Msg[this.Msg.Length - 1].Equals(" ")))
+                {
+                    this.Msg += " ";
+                }
         }
     }
 }
